@@ -30,12 +30,10 @@ export default function ModalProject(props) {
   const dispatch = useDispatch();
   const { projectList } = useSelector(state => state.projectList);
 
-  // Modal actions
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // Select actions
   const [project, setProject] = React.useState(1);
 
   const handleChange = (event) => {

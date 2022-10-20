@@ -112,14 +112,3 @@ export default function ModalSalaries() {
     </div>
   );
 }
-
-
-
-// placeholder='Percentage'
-//                   name="password"
-//                   label="Password"
-//                   type='number'
-//                   id='percentage'
-//                   margin="normal"
-//                   required
-//                   fullWidth
