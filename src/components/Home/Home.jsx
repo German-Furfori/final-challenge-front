@@ -11,7 +11,8 @@ import {
   SiMysql,
   SiJava,
   SiSpringboot,
-  SiSpring
+  SiSpring,
+  SiPwa
 } from "react-icons/si";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
     { name: 'React', icon: <SiReact/> },
     { name: 'Redux', icon: <SiRedux/> },
     { name: 'React Router', icon: <SiReactrouter/> },
+    { name: 'PWA', icon: <SiPwa/> },
     { name: 'Material UI', icon: <SiMaterialui/> },
     { name: 'HTML5', icon: <SiHtml5/> },
     { name: 'CSS3', icon: <SiCss3/> },
@@ -39,7 +41,7 @@ export default function Home() {
             </Typography>
             <Typography sx={{ mb: 1.5, fontSize: 17, paddingTop: 3 }} color="text.secondary">
               This is a web page to manage the salaries and project assignment of the enterprise employees.
-              Also, if you install this app in your phone it will notify you every month with the monthly inflation information.
+              You can install this web application on your cellphone.
             </Typography>
           </CardContent>
         </Card>

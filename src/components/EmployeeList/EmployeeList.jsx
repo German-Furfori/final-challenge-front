@@ -82,7 +82,7 @@ export default function EmployeeList() {
               padding: 2
             }}
             count={employees.totalPages}
-            defaultPage={page - 1}
+            defaultPage={ page? (page - 1) : 1 }
             onChange={handleChangePage}
             shape="rounded"
           />

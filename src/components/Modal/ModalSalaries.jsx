@@ -37,7 +37,6 @@ export default function ModalSalaries() {
   const callExternalApi = async () => {
     let response = await getInflationInfo();
     setLoading(false);
-    console.log(response);
     setResponse(response);
   }
 
