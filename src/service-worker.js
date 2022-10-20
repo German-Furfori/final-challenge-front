@@ -24,7 +24,7 @@ const CACHE_IMMUTABLE = 'cache-inmutable-v1';
 const APP_SHELL = [
   '/',
   '/index.html',
-  'https://ayi.group/wp-content/uploads/2021/10/ayi_favicon.png'
+  '/ayi_favicon.png'
 ];
 
 const APP_SHELL_IMMUTABLE = [

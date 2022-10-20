@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { incrementSalaries } from '../../api/employeeApi';
+import { getInflationInfo } from '../../api/externalApi';
 
 const style = {
   position: 'absolute',
@@ -22,19 +23,34 @@ const style = {
   p: 4,
 };
 
-export default function ModalSalaries(props) {
+export default function ModalSalaries() {
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const [response, setResponse] = React.useState({});
+  const [loading, setLoading] = React.useState(false);
+
+  const handleOpen = async () => {
+    setLoading(true);
+    setOpen(true);
+    callExternalApi();
+  }
+
+  const callExternalApi = async () => {
+    let response = await getInflationInfo();
+    setLoading(false);
+    console.log(response);
+    setResponse(response);
+  }
+
   const handleClose = () => setOpen(false);
 
   const handleIncrementSalariesButton = async () => {
     let percentage = document.getElementById('percentage').value;
+    let response = await incrementSalaries(percentage);
     if(percentage && percentage <= 100 && percentage > 0) {
-      let response = await incrementSalaries(percentage);
       alert(response.Message);
       setOpen(false);
     } else {
-      alert('Incorrect value');
+      alert(response.Message);
     }
   }
 
@@ -56,6 +72,18 @@ export default function ModalSalaries(props) {
           <Box sx={style}>
             <Typography sx={{ paddingBottom: 3 }} id="transition-modal-title" variant="h6" component="h2">
               Increment Salaries
+            </Typography>
+            <Typography sx={{ paddingBottom: 3 }} id="transition-modal-title" variant="p" component="p">
+
+              { loading? (
+                <>
+                  Loading...
+                </>
+              ) : (
+                <>
+                  The monthly inflation at {response.d} was: {response.v}
+                </>
+              ) }
             </Typography>
             <Grid container spacing={2}>
               <Grid item xs={12}>

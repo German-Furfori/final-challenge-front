@@ -45,7 +45,6 @@ export default function EmployeeList() {
         <>
           <Typography align='center' variant="h4" color='white' sx={{ paddingTop: 6 }}> List of Employees </Typography>
           <ModalSalaries/>
-          
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-labelledby="simple table" className='setBackground'>
               <TableHead>

@@ -20,7 +20,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   borderRadius: '10px',
-  width: 300,
+  width: 280,
   bgcolor: '#3F3E3E',
   boxShadow: 24,
   p: 4,
@@ -40,7 +40,6 @@ export default function ModalProject(props) {
 
   const handleChange = (event) => {
     setProject(event.target.value);
-    console.log(project);
   };
 
   const handleAssignProject = async () => {

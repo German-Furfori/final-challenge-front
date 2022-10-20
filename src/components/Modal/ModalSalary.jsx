@@ -16,7 +16,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   borderRadius: '10px',
-  width: 300,
+  width: 280,
   bgcolor: '#3F3E3E',
   boxShadow: 24,
   p: 4,
@@ -29,12 +29,12 @@ export default function ModalSalary(props) {
 
   const handleUpdateSalary = async () => {
     let salary = document.getElementById('salary').value;
+    let response = await updateEmployeeSalary(props.idEmployee, salary);
     if(salary != null && salary >= 100000) {
-      let response = await updateEmployeeSalary(props.idEmployee, salary);
       alert(response.Message);
       window.location.reload();
     } else {
-      alert('Incorrect value');
+      alert(response.Message);
     }
   }
 

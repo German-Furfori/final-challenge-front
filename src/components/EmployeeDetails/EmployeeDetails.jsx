@@ -10,6 +10,7 @@ import Link from '../../img/Link.webp';
 import Arcor from '../../img/Arcor.webp';
 import Zurich from '../../img/Zurich.webp';
 import Cordoba from '../../img/Cordoba.webp';
+import './styles.css';
 
 export default function EmployeeDetails() {
   const dispatch = useDispatch();

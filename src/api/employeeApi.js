@@ -3,18 +3,14 @@ const baseUrl = `http://localhost:8080/api/employee`;
 export async function getAllEmployeePages(page) {
     let rows = 8;
 
-    try {
-        let response = await fetch(`${baseUrl}/getAllEmployeePages/${page}/${rows}`, {
-            "method": 'GET',
-            "headers": {
-                "Content-Type": 'application/json'
-            }
-        });
+    let response = await fetch(`${baseUrl}/getAllEmployeePages/${page}/${rows}`, {
+        "method": 'GET',
+        "headers": {
+            "Content-Type": 'application/json'
+        }
+    });
 
-        return await response.json();
-    } catch (error) {
-        console.log(error);
-    }   
+    return await response.json();
         
 }
 
